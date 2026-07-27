@@ -10,7 +10,7 @@
     <style>
         body {
             margin: 0;
-            font-family: "Baloo 2", sans-serif;
+            font-family: "Baloo 2", "sans-serif";
             background:
                 linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)),
                 url("home.jpeg") no-repeat center center/cover fixed;
@@ -95,10 +95,38 @@
             padding: 40px 20px;
         }
 
+        /* Logo Card above H1 */
+        .hero-logo-card {
+            background: rgba(13, 22, 38, 0.85);
+            border: 2px solid #00D9FF;
+            border-radius: 16px;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 217, 255, 0.6);
+        }
+
+        .hero-logo-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
         h1 {
             color: white;
             font-size: 3.5rem;
             margin-bottom: 10px;
+            margin-top: 0;
             text-shadow: 0 0 20px rgba(0, 0, 0, .8);
         }
 
@@ -316,7 +344,13 @@
 
     <!-- Hero Area -->
     <div class="content-1">
-        <h1>Hello, Muhammad Mujtaba here</h1>
+        <!-- Logo Card above Header -->
+        <div class="hero-logo-card">
+            <img src="logo.png" alt="Dev Triceps Logo">
+        </div>
+
+        <h1 style="color: #00b3d6;">DEV TRICEPS</h1>
+        <h2>Hello, Muhammad Mujtaba here</h2>
         <p>
             Welcome to my portfolio! Check out my official front-end web development projects below.
         </p>
