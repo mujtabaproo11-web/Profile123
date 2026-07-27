@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url("about.jpeg") no-repeat center center/cover;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: rgba(8, 15, 35, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 18px 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #00D9FF;
+        }
+              .logo {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .logo img {
+            width: 65px;
+            height: 65px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #00D9FF;
+            cursor: pointer;
+            transition: .4s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.12) rotate(360deg);
+            box-shadow: 0 0 18px #00D9FF;
+        }
+
+        /* ================= CONTENT ================= */
+
+        .content-1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            min-height: 100vh;
+
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-shadow: 0 0 20px rgba(0, 0, 0, .8);
+            margin-bottom: 20px;
+        }
+
+        .content-1 p {
+            font-size: 1.2rem;
+            color: #d8e6ff;
+            line-height: 1.8;
+            margin: 10px 0;
+            max-width: 900px;
+        }
+
+        h2 {
+            margin-top: 60px;
+            margin-bottom: 30px;
+            font-size: 2.3rem;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .button {
+            display: inline-block;
+            margin: 15px 8px;
+            background: #00BFFF;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .button:hover {
+            background: #0099cc;
+            transform: translateY(-3px);
+        }
+
+        /* ================= CARDS ================= */
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 300px;
+            background: rgba(0, 0, 0, .75);
+            backdrop-filter: blur(10px);
+
+            border-radius: 12px;
+            overflow: hidden;
+
+            transition: .3s;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .5);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin: 20px 0 10px;
+        }
+
+        .card p {
+            padding: 0 20px 25px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #d8e6ff;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #081326;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        footer h4 {
+            color: #00D9FF;
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: #00D9FF;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        footer p {
+            margin: 15px 0;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width:768px) {
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 18px;
+            }
+
+            nav a {
+                font-size: 16px;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+        </nav>
+    </header>
+
+    <div class="content-1">
+
+        <h1>About Me & This Project</h1>
+
+        <p>
+            Welcome! I am Muhammad, a passionate developer building multi-page web experiences.
+            This platform is a showcase of clean design, structured layouts, and smooth user navigation.
+        </p>
+
+        <p>
+            My goal is to create responsive, modern, and impactful websites using HTML and CSS while
+            constantly improving my design and development skills.
+        </p>
+
+        <div>
+            <a href="contact.html" class="button">Get In Touch</a>
+            <a href="index.html" class="button">Back To Home</a>
+        </div>
+
+        <h2>My Skills & Expertise</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <img src="graphics.jpeg" alt="Graphic Designer">
+
+                <h3>Graphic Designer</h3>
+
+                <p>
+                    I create modern logos, posters, banners, social media posts,
+                    branding materials, and eye-catching visuals with clean and
+                    attractive designs.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <img src="video.jpeg" alt="Video Editor">
+
+                <h3>Video Editor</h3>
+
+                <p>
+                    I edit professional videos for YouTube, Instagram, TikTok,
+                    and promotional content with cinematic effects, smooth
+                    transitions, and engaging storytelling.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <img src="web.jpeg" alt="Web Developer">
+
+                <h3>Web Developer</h3>
+
+                <p>
+                    I build responsive websites using HTML and CSS with modern
+                    layouts, clean code, fast loading speeds, and user-friendly
+                    interfaces.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <h3>Let's Connect</h3>
+
+        <h4>Email: mujtabaproo11@gmail.com</h4>
+
+        <p>
+            <a href="https://instagram.com/mujtabx.__" target="_blank">
+                Follow me on Instagram
+            </a>
+        </p>
+
+        <br>
+
+        <p>&copy; 2026 Muhammad. Built with HTML & CSS.</p>
+
+    </footer>
+
+</body>
+
+</html>
