@@ -10,7 +10,7 @@
     <style>
         body {
             margin: 0;
-            font-family: "Baloo 2", "sans-serif";
+            font-family: "Baloo 2", sans-serif;
             background:
                 linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)),
                 url("home.jpeg") no-repeat center center/cover fixed;
@@ -79,11 +79,9 @@
         }
 
         .logo img:hover {
-            transform: scale(1.12) rotate(360deg);
+            transform: translateY(-4.5px);
             box-shadow: 0 0 18px #00D9FF;
         }
-
-        /* ================= HERO SECTION ================= */
 
         .content-1 {
             display: flex;
@@ -94,8 +92,6 @@
             min-height: 80vh;
             padding: 40px 20px;
         }
-
-        /* Logo Card above H1 */
         .hero-logo-card {
             background: rgba(13, 22, 38, 0.85);
             border: 2px solid #00D9FF;
@@ -105,13 +101,13 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+            box-shadow: 5px 5px 20px rgba(104, 228, 250, 0.3);
             backdrop-filter: blur(8px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .hero-logo-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4.5px);
             box-shadow: 0 0 25px rgba(0, 217, 255, 0.6);
         }
 
@@ -150,12 +146,8 @@
 
         .button:hover {
             background: #0099cc;
-            transform: translateY(-3px);
-            box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+            box-shadow: 5px 5px 15px rgba(25, 220, 255, 0.5);
         }
-
-        /* ================= PROJECTS SECTION ================= */
-
         .projects-section {
             padding: 60px 20px;
             max-width: 1100px;
@@ -176,7 +168,7 @@
             gap: 35px;
         }
 
-        /* Project Card Design (Matching your Reference Card) */
+
         .project-card {
             background: rgba(13, 22, 38, 0.85);
             border: 1px solid rgba(0, 217, 255, 0.2);
@@ -196,7 +188,7 @@
             box-shadow: 0 12px 35px rgba(0, 217, 255, 0.2);
         }
 
-        /* Image Frame with Cyan Glow Border */
+
         .card-img-wrapper {
             flex-shrink: 0;
             width: 320px;
@@ -302,7 +294,7 @@
             }
         }
 
-        /* ================= FOOTER ================= */
+
 
         footer {
             background: #081326;
@@ -328,11 +320,11 @@
 
     <header>
         <nav>
-            <!-- Navigation Links -->
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Message Me</a></li>
             </ul>
 
             <!-- Logo on Right -->

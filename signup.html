@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Baloo 2", sans-serif;
+            background:
+                linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)),
+                url("signup.jpg") no-repeat center center/cover fixed;
+            color: white;
+        }
+        header {
+            background: rgba(8, 15, 35, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 18px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #00D9FF;
+        }
+
+        .button {
+            background: #00BFFF;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            display: inline-block;
+            transition: .3s;
+        }
+
+        .button:hover {
+            background: #0099cc;
+            box-shadow: 5px 5px 15px rgba(25, 220, 255, 0.5);
+        }
+
+        .logo {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .logo img {
+            width: 65px;
+            height: 65px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #00D9FF;
+            cursor: pointer;
+            transition: .4s ease;
+        }
+
+        .logo img:hover {
+            transform: translateY(-4.5px);
+            box-shadow: 0 0 18px #00D9FF;
+        }
+
+
+        .signup-container {
+
+            width: 420px;
+            margin: 60px auto;
+
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+
+            border-radius: 20px;
+
+            padding: 40px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+
+        }
+
+        .signup-container h1 {
+
+            text-align: center;
+            margin-bottom: 10px;
+            color: white;
+
+        }
+
+        .signup-container p {
+
+            text-align: center;
+            color: #d8e6ff;
+            margin-bottom: 30px;
+
+        }
+
+        .signup-container label {
+
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: white;
+
+        }
+
+        .signup-container input,
+        .signup-container select {
+
+            width: 100%;
+            padding: 12px;
+
+            border: none;
+            border-radius: 8px;
+
+            outline: none;
+
+            font-size: 16px;
+
+            background: rgba(255, 255, 255, .12);
+
+            color: white;
+
+        }
+
+        .signup-container input::placeholder {
+
+            color: #cccccc;
+
+        }
+
+        .signup-container select {
+
+            cursor: pointer;
+
+        }
+
+        .signup-container option {
+
+            color: black;
+
+        }
+
+        .signup-container .button {
+
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            margin-top: 30px;
+            font-size: 17px;
+
+        }
+
+        @media(max-width:500px) {
+
+            .signup-container {
+
+                width: 90%;
+                padding: 25px;
+
+            }
+
+        }
+
+        footer {
+            background: #081326;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(0, 217, 255, 0.2);
+        }
+
+        footer a {
+            color: #00D9FF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Message Me</a></li>
+            </ul>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+        </nav>
+    </header>
+    <div class="signup-container">
+
+        <h1>Contace Me</h1>
+        <p>Fill in your details below.</p>
+
+        <form>
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name" required>
+
+            <label>Father's Name</label>
+            <input type="text" placeholder="Enter your father's name" required>
+
+            <label>Gender</label>
+            <select required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+
+            <label>Birth Date</label>
+            <input type="date" required>
+
+            <button type="submit" class="button">Sign Up</button>
+
+        </form>
+
+    </div>
+
+
+
+
+    <footer>
+        <h3>Let's Connect</h3>
+        <h4 style="color:#00D9FF;">
+            Email Me: mujtabaproo11@gmail.com
+        </h4>
+        <a href="https://instagram.com/mujtabx.__" target="_blank">Social Media</a>
+        <br><br>
+        &copy; 2026 Muhammad Mujtaba. Built with HTML & CSS.
+    </footer>
+</body>
+
+</html>
