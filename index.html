@@ -15,9 +15,8 @@
                 linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)),
                 url("home.jpeg") no-repeat center center/cover fixed;
             color: white;
+            overflow-x: hidden;
         }
-
-        /* ================= HEADER ================= */
 
         header {
             background: rgba(8, 15, 35, 0.85);
@@ -28,16 +27,12 @@
             z-index: 1000;
         }
 
-        /* Navigation */
-
         nav {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
-        /* Navigation Links */
 
         nav ul {
             display: flex;
@@ -58,8 +53,6 @@
         nav a:hover {
             color: #00D9FF;
         }
-
-        /* Logo */
 
         .logo {
             position: absolute;
@@ -83,6 +76,17 @@
             box-shadow: 0 0 18px #00D9FF;
         }
 
+        /* Pure CSS Mobile Drawer Setup */
+        .menu-toggle,
+        .menu-btn {
+            display: none;
+        }
+
+        .drawer-overlay {
+            display: none;
+        }
+
+        /* Hero & Body Section */
         .content-1 {
             display: flex;
             flex-direction: column;
@@ -92,6 +96,7 @@
             min-height: 80vh;
             padding: 40px 20px;
         }
+
         .hero-logo-card {
             background: rgba(13, 22, 38, 0.85);
             border: 2px solid #00D9FF;
@@ -148,6 +153,8 @@
             background: #0099cc;
             box-shadow: 5px 5px 15px rgba(25, 220, 255, 0.5);
         }
+
+        /* Projects Section */
         .projects-section {
             padding: 60px 20px;
             max-width: 1100px;
@@ -168,7 +175,6 @@
             gap: 35px;
         }
 
-
         .project-card {
             background: rgba(13, 22, 38, 0.85);
             border: 1px solid rgba(0, 217, 255, 0.2);
@@ -187,7 +193,6 @@
             border-color: #00D9FF;
             box-shadow: 0 12px 35px rgba(0, 217, 255, 0.2);
         }
-
 
         .card-img-wrapper {
             flex-shrink: 0;
@@ -210,7 +215,6 @@
             transform: scale(1.05);
         }
 
-        /* Details Side */
         .card-details {
             flex-grow: 1;
         }
@@ -262,40 +266,6 @@
             box-shadow: 0 0 12px #00D9FF;
         }
 
-        .btn-outline {
-            background: transparent;
-            color: #00D9FF;
-            border: 1px solid #00D9FF;
-            padding: 10px 22px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: .3s;
-        }
-
-        .btn-outline:hover {
-            background: rgba(0, 217, 255, 0.1);
-        }
-
-        /* Responsive Layout for smaller screens */
-        @media (max-width: 820px) {
-            .project-card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .card-img-wrapper {
-                width: 100%;
-                height: 220px;
-            }
-
-            .card-buttons {
-                justify-content: center;
-            }
-        }
-
-
-
         footer {
             background: #081326;
             color: white;
@@ -312,31 +282,169 @@
         footer a:hover {
             color: white;
         }
-    </style>
 
+        /* --- MOBILE RESPONSIBVENESS & DRAWER MENU --- */
+        @media (max-width: 820px) {
+            header {
+                padding: 12px 20px;
+            }
+
+            nav {
+                justify-content: space-between;
+            }
+
+            /* Show Hamburger Button */
+            .menu-btn {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 30px;
+                height: 22px;
+                cursor: pointer;
+                z-index: 1002;
+            }
+
+            .menu-btn span {
+                height: 3px;
+                width: 100%;
+                background-color: #00D9FF;
+                border-radius: 3px;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            /* Mobile Drawer Navigation */
+            nav ul {
+                position: fixed;
+                top: 0;
+                left: -280px; /* Hidden off screen by default */
+                width: 260px;
+                height: 100vh;
+                background: rgba(8, 15, 35, 0.96);
+                backdrop-filter: blur(15px);
+                border-right: 1px solid rgba(0, 217, 255, 0.3);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 90px 30px 30px 30px;
+                gap: 25px;
+                transition: left 0.3s ease;
+                z-index: 1001;
+            }
+
+            nav ul li a {
+                font-size: 20px;
+                display: block;
+            }
+
+            /* Clickable Dark Overlay Behind Open Drawer */
+            .drawer-overlay {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.6);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+                z-index: 1000;
+            }
+
+            /* Open Drawer when Checkbox is Checked */
+            .menu-toggle:checked ~ ul {
+                left: 0;
+            }
+
+            .menu-toggle:checked ~ .drawer-overlay {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            /* Animate Hamburger into an "X" when open */
+            .menu-toggle:checked ~ .menu-btn span:nth-child(1) {
+                transform: translateY(9.5px) rotate(45deg);
+            }
+
+            .menu-toggle:checked ~ .menu-btn span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle:checked ~ .menu-btn span:nth-child(3) {
+                transform: translateY(-9.5px) rotate(-45deg);
+            }
+
+            /* Reposition Logo on Mobile */
+            .logo {
+                position: relative;
+                top: 0;
+                transform: none;
+            }
+
+            .logo img {
+                width: 50px;
+                height: 50px;
+            }
+
+            /* Content & Card adjustments for mobile screens */
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .project-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .card-img-wrapper {
+                width: 100%;
+                height: 200px;
+            }
+
+            .card-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
         <nav>
+            <!-- Checkbox hack to control open/close state without JavaScript -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+            <!-- Mobile Hamburger Button -->
+            <label for="menu-toggle" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Navigation Links (Drawer on Mobile) -->
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="#projects">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="signup.html">Sign UP</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
             </ul>
 
-            <!-- Logo on Right -->
+            <!-- Dark Overlay when Mobile Drawer is Open -->
+            <label for="menu-toggle" class="drawer-overlay"></label>
+
             <div class="logo">
                 <img src="logo.png" alt="Logo">
             </div>
         </nav>
     </header>
 
-    <!-- Hero Area -->
     <div class="content-1">
-        <!-- Logo Card above Header -->
         <div class="hero-logo-card">
             <img src="logo.png" alt="Dev Triceps Logo">
         </div>
@@ -352,16 +460,13 @@
         </div>
     </div>
 
-    <!-- Featured Projects Section -->
     <section class="projects-section" id="projects">
         <h2 class="section-title">Featured Projects</h2>
 
         <div class="cards-container">
 
-            <!-- PROJECT 1: Spotify Clone -->
             <div class="project-card">
                 <div class="card-img-wrapper">
-                    <!-- Replace 'spotify-ss.png' with your actual screenshot path -->
                     <img src="spotify-ss.png" alt="Spotify Clone Screenshot">
                 </div>
                 <div class="card-details">
@@ -375,16 +480,13 @@
                         A responsive front-end clone of Spotify's music player. Features custom play controls, custom scrollbars, sidebar navigation, and organized music playlists styled using modern CSS layout techniques.
                     </p>
                     <div class="card-buttons">
-                        <!-- Replace '#' with your actual live project URL -->
                         <a href="https://open.spotify.com/" target="_blank" class="btn-cyan">Open Website</a>
                     </div>
                 </div>
             </div>
 
-            <!-- PROJECT 2: YouTube Clone -->
             <div class="project-card">
                 <div class="card-img-wrapper">
-                    <!-- Replace 'youtube-ss.png' with your actual screenshot path -->
                     <img src="youtube-ss.png" alt="YouTube Clone Screenshot">
                 </div>
                 <div class="card-details">
@@ -398,16 +500,13 @@
                         An accurate UI reproduction of YouTube's video grid home page. Includes search bar header, collapsable sidebar navigation, video thumbnail grids with duration tags, and channel metadata.
                     </p>
                     <div class="card-buttons">
-                        <!-- Replace '#' with your actual live project URL -->
                         <a href="https://www.youtube.com/" target="_blank" class="btn-cyan">Open Website</a>
                     </div>
                 </div>
             </div>
 
-            <!-- PROJECT 3: Netflix Clone -->
             <div class="project-card">
                 <div class="card-img-wrapper">
-                    <!-- Replace 'netflix-ss.png' with your actual screenshot path -->
                     <img src="netflix-ss.png" alt="Netflix Clone Screenshot">
                 </div>
                 <div class="card-details">
@@ -421,7 +520,6 @@
                         A modern design clone of the Netflix homepage featuring hero background banners with dark overlays, custom FAQ dropdown elements, styled inputs, and horizontal movie category sliders.
                     </p>
                     <div class="card-buttons">
-                        <!-- Replace '#' with your actual live project URL -->
                         <a href="https://www.netflix.com/nl-en/" target="_blank" class="btn-cyan">Open Website</a>
                     </div>
                 </div>
@@ -430,7 +528,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <h3>Let's Connect</h3>
         <h4 style="color:#00D9FF;">
